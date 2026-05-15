@@ -6,6 +6,66 @@
 <title>Uncommon Ground Initiative | Port St. Lucie and Stuart, FL</title>
 <meta name="description" content="Uncommon Ground Initiative is a Christian organization creating safe, welcoming community for teens in Port St. Lucie and Stuart, FL. Every Thursday at Stuart Ceramics.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ═══ GOOGLE ANALYTICS 4 ═══════════════════════════════════════════════════
+     SETUP: Go to analytics.google.com → create a GA4 property → get your
+     Measurement ID (looks like G-XXXXXXXXXX) → paste it in BOTH places below.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- ═══ LOCAL SEO — STRUCTURED DATA ══════════════════════════════════════════
+     Tells Google this is a real local nonprofit so it shows up in local search.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Uncommon Ground Initiative",
+  "alternateName": "UGI",
+  "url": "https://uncommongroundinitiative.org",
+  "logo": "https://uncommongroundinitiative.org/logo.png",
+  "description": "A Christian nonprofit creating safe, welcoming community spaces for teens ages 13–18 in Port St. Lucie and Stuart, FL.",
+  "telephone": "+1-772-877-5787",
+  "email": "hello@uncommongroundinitiative.org",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Port St. Lucie",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Port St. Lucie, FL", "Stuart, FL", "St. Lucie County, FL"],
+  "foundingDate": "2026",
+  "sameAs": [],
+  "nonprofitStatus": "Nonprofit501c3",
+  "event": {
+    "@type": "Event",
+    "name": "Uncommon Thursdays",
+    "description": "Weekly teen gathering at Stuart Ceramics every Thursday at 6:30 PM.",
+    "startDate": "2026-04-30",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1W",
+      "byDay": "Thursday"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Stuart Ceramics",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Stuart",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
+</script>
 <style>
 :root{--navy:#3A3059;--teal:#2E7494;--lav:#B7ADDE;--mauve:#CCA3CD;--cream:#F4F2FA;--white:#fff;--gold:#C9973A;--dk:#1E1A2E;--md:#4A3E65;--lt:#8577A0}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -33,6 +93,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(244,242,250,
 .bn{background:var(--navy);color:var(--white);padding:0.7rem 1.5rem;font-size:0.85rem}
 .bt{background:var(--teal);color:var(--white);padding:0.7rem 1.5rem;font-size:0.85rem}
 section{padding:5rem 1.5rem}.container{max-width:1100px;margin:0 auto}
+.ppm{display:none;position:fixed;inset:0;z-index:999;background:rgba(30,26,46,0.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1.5rem}
+.ppm.open{display:flex}
+.ppb{background:#fff;border-radius:20px;max-width:680px;width:100%;max-height:82vh;overflow-y:auto;padding:2.5rem;position:relative}
+.ppb h2{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem}
+.ppb .ppd{font-size:0.78rem;color:var(--lt);margin-bottom:1.5rem}
+.ppb h3{font-family:Poppins,sans-serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin:1.25rem 0 0.4rem}
+.ppb p,.ppb li{font-size:0.86rem;color:#4A3E65;line-height:1.75}
+.ppb ul{padding-left:1.25rem;margin-bottom:0.75rem}
+.ppcl{position:absolute;top:1rem;right:1.25rem;font-size:1.2rem;cursor:pointer;color:var(--lt);background:none;border:none;line-height:1}
+.ppcl:hover{color:var(--navy)}
+.ppdl{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.82rem;font-weight:600;color:var(--teal);text-decoration:none;padding:0.45rem 1rem;border:1px solid rgba(46,116,148,0.3);border-radius:50px;transition:background 0.2s}
+.ppdl:hover{background:rgba(46,116,148,0.07)}
+.fstrip{background:var(--cream);border:1px solid rgba(183,173,222,0.3);border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.fstrip h4{font-family:Poppins,sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem}
+.fstrip p{font-size:0.8rem;color:var(--lt);margin:0}
+.fstrip .fslinks{display:flex;gap:0.65rem;flex-wrap:wrap}
+.chk-row{display:flex;align-items:flex-start;gap:0.65rem;margin:0.75rem 0 1rem;padding:0.85rem 1rem;background:var(--cream);border-radius:10px;border:1px solid rgba(183,173,222,0.25)}
+.chk-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:3px;accent-color:var(--navy);cursor:pointer}
+.chk-row label{font-size:0.82rem;color:var(--md);line-height:1.55;cursor:pointer}
 .label{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.85rem}
 #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding-top:70px;overflow:hidden}
 .hbgimg{position:absolute;inset:0;background-size:cover;background-position:center}
@@ -350,6 +429,83 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
   <input type="text" name="holdsback">
 </form>
 
+<!-- ═══ NETLIFY FORMS DETECTION ══════════════════════════════════════════════
+     These hidden forms let Netlify register all form names at build time.
+     Do NOT remove them — they're what makes the JS fetch submissions work.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<div style="display:none" aria-hidden="true">
+  <form name="contact" netlify netlify-honeypot="bot-field">
+    <input name="bot-field"><input name="firstName"><input name="lastName">
+    <input name="email"><input name="phone"><input name="role"><textarea name="message"></textarea>
+  </form>
+  <form name="prayer" netlify netlify-honeypot="bot-field">
+    <input name="bot-field"><input name="firstName"><input name="lastName">
+    <input name="email"><input name="type"><textarea name="request"></textarea>
+  </form>
+  <form name="email-signup" netlify netlify-honeypot="bot-field">
+    <input name="bot-field"><input name="firstName"><input name="email"><input name="phone">
+  </form>
+  <form name="get-to-know-you" netlify netlify-honeypot="bot-field">
+    <input name="bot-field"><input name="name"><input name="age"><input name="grade">
+    <input name="school"><input name="church"><input name="vibe"><input name="food">
+    <input name="fact"><input name="lovelang"><input name="wouldyou"><input name="goodat">
+    <textarea name="struggle"></textarea><textarea name="need"></textarea>
+    <input name="oneword"><textarea name="hoping"></textarea><textarea name="knowus"></textarea>
+    <input name="knowjesus"><input name="howlong"><textarea name="godrn"></textarea>
+    <textarea name="scripture"></textarea><textarea name="question"></textarea>
+    <textarea name="prayfor"></textarea><textarea name="holdsback"></textarea>
+  </form>
+</div>
+
+<!-- ═══ PRIVACY POLICY MODAL ════════════════════════════════════════════════ -->
+<div class="ppm" id="ppModal" onclick="if(event.target===this)ppClose()">
+  <div class="ppb">
+    <button class="ppcl" onclick="ppClose()" aria-label="Close privacy policy">✕</button>
+    <h2>Privacy Policy</h2>
+    <p class="ppd">Uncommon Ground Initiative, Inc. &nbsp;|&nbsp; Last updated: 2026</p>
+    <h3>Who We Are</h3>
+    <p>Uncommon Ground Initiative, Inc. ("UGI") is a 501(c)(3) nonprofit organization based in Port St. Lucie, Florida. Our website is uncommongroundinitiative.org. You can reach us at hello@uncommongroundinitiative.org or (772) 877-5787.</p>
+    <h3>What Information We Collect</h3>
+    <p>We only collect information you voluntarily provide through our website forms:</p>
+    <ul>
+      <li>Name, email address, and phone number (contact and sign-up forms)</li>
+      <li>Prayer requests (submitted through our prayer form)</li>
+      <li>Personal responses submitted through our "Get to Know You" intake form</li>
+      <li>General messages sent through our contact form</li>
+    </ul>
+    <h3>How We Use Your Information</h3>
+    <p>We use information you share only to:</p>
+    <ul>
+      <li>Respond to your messages and inquiries</li>
+      <li>Send you updates about UGI events and programming (only if you sign up)</li>
+      <li>Pray for you by name when you submit a prayer request</li>
+      <li>Connect with teens and families before their first UGI gathering</li>
+    </ul>
+    <h3>We Will Never</h3>
+    <ul>
+      <li>Sell, rent, or share your personal information with third parties for marketing</li>
+      <li>Use your information in a way that is inconsistent with our mission</li>
+      <li>Share prayer requests or intake form responses publicly</li>
+      <li>Send spam or unsolicited communications</li>
+    </ul>
+    <h3>Information About Minors</h3>
+    <p>UGI serves teens ages 13–18. We take the privacy of minors seriously. We do not knowingly collect personal data from anyone under 13. For teens 13–17, we encourage parental awareness of the information shared through our forms. If you are a parent with concerns about your child's information, contact us at hello@uncommongroundinitiative.org.</p>
+    <h3>Photos and Videos</h3>
+    <p>UGI may photograph or video record events. We only use images of participants for whom we have a signed Photo and Video Release Form on file. If you or your teen do not wish to be photographed, notify a UGI staff member at any event.</p>
+    <h3>Data Storage and Security</h3>
+    <p>Form submissions are processed through Netlify Forms and stored securely. We use reasonable measures to protect your information, but no method of electronic transmission or storage is 100% secure.</p>
+    <h3>Your Rights</h3>
+    <p>You may request that we delete your information at any time by contacting us at hello@uncommongroundinitiative.org. We will honor all deletion requests promptly.</p>
+    <h3>Changes to This Policy</h3>
+    <p>We may update this privacy policy as UGI grows. The most current version will always be accessible on our website.</p>
+    <h3>Contact</h3>
+    <p>Uncommon Ground Initiative, Inc.<br>Email: hello@uncommongroundinitiative.org<br>Phone: (772) 877-5787</p>
+    <div style="margin-top:1.5rem">
+      <button onclick="ppClose()" class="btn bp" style="font-size:0.85rem;padding:0.6rem 1.5rem">Got it</button>
+    </div>
+  </div>
+</div>
+
 <nav>
   <a href="#hero" class="nb">
     <img src="data:image/png;base64,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ccy8+XFS0Q26o5ef5h0j0jUBV+B/L/O5OCuES3mdOtrKR8iHZ2lm7U+9N4QQ4QTOfK44PjrRd2V4eGRyYnwSNYAgQiKBra1N7SuaGpsaWlobG5vq/UeEAIN2PKU0gwbCSqGpuL3wDgPeihEJQgchchbiHjZE9Y4IFdQLBUj7qXEKH1KiA+dhWUkq70SMSCUXgza0a8gQtj35D+uLK61IVQdZECw7EcvYp/KZ125NGcxf/iE20QPZmLVmRCBBpmnCsjsdHUpJT6pgprFvRf3KpAA5i3FVhCz7rrBvYSiuomPeUPSRJUTyT/PnO8W1C8Y4r2zOfSTKL8KprGCNnq7r+yE+hhCMFY3UzjLbGKVPCcv+f/zWg6e2RK9AeRf8os3KjArGRAojbPjaG0CMfNUgB0DBE0jZddyQ5ctMG2+iQh8biM03iFmD+McIysMWwa9vX+5JLRyTGAw/WF4PM/t7ruISFCY3o7vyrVMw9h0CoAKX9e58CoWCYYR57XJX4BJOrpxIFLOY0ToiXgQ/o8fxvHEUBFb6P/EVluPEsmWtEMLYp/y4+wbZz9jUl4oy9jACCO84aDssE9AvdC8/FSCokYoB2PE4KUbCsrvAsZxERW9zuAfafwIsY8BDSx6yGWDaAYjir+T/A4m0fGfKGBGnAAAA+mVYSWZNTQAqAAAACAAHAQ4AAgAAAAsAAABiARIAAwAAAAEAAQAAARoABQAAAAEAAABuARsABQAAAAEAAAB2ASgAAwAAAAEAAgAAATIAAgAAABQAAAB+h2kABAAAAAEAAACSAAAAAFNjcmVlbnNob3QAAAAAAJAAAAABAAAAkAAAAAEyMDI2OjAyOjA2IDE2OjU5OjMxAAAFkAMAAgAAABQAAADUkoYABwAAABIAAADooAEAAwAAAAEAAQAAoAIABAAAAAEAAAM+oAMABAAAAAEAAAN5AAAAADIwMjY6MDI6MDYgMTY6NTk6MzEAQVNDSUkAAABTY3JlZW5zaG90KwDHYgAAABF0RVh0ZXhpZjpDb2xvclNwYWNlADEPmwJJAAAAIXRFWHRleGlmOkRhdGVUaW1lADIwMjY6MDI6MDYgMTY6NTk6MzHlYJj7AAAAKXRFWHRleGlmOkRhdGVUaW1lT3JpZ2luYWwAMjAyNjowMjowNiAxNjo1OTozMXbscD0AAAATdEVYdGV4aWY6RXhpZk9mZnNldAAxNDYQQyi6AAAAIHRFWHRleGlmOkltYWdlRGVzY3JpcHRpb24AU2NyZWVuc2hvdBkDHKcAAAAYdEVYdGV4aWY6UGl4ZWxYRGltZW5zaW9uADgzMGLOKCEAAAAYdEVYdGV4aWY6UGl4ZWxZRGltZW5zaW9uADg4OWXpqDgAAAAWdEVYdGV4aWY6VXNlckNvbW1lbnQAQVNDSUm041reAAAAAElFTkSuQmCC" alt="UGI Logo" loading="lazy">
@@ -569,19 +725,25 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
     <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--navy);margin-bottom:0.7rem">We take your trust seriously.</h2>
     <p style="color:var(--md);font-size:1rem;margin-bottom:2.5rem;max-width:600px">Letting your teen walk into any space takes trust. Here is what we are committed to.</p>
     <div class="pg">
-      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:20px;height:20px"><line x1="12" y1="2" x2="12" y2="22"/><line x1="4" y1="8" x2="20" y2="8"/></svg></div>
-<div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="20" height="20"><line x1="12" y1="3" x2="12" y2="21"/><line x1="4" y1="9" x2="20" y2="9"/></svg></div><h3>Christian-Founded, Pressure-Free</h3><p>Biblical teaching and personal testimonies are always part of our gatherings. That is the point of what we do. Your teen will never be pressured, manipulated, or made to feel unwelcome regardless of where they stand in faith.</p></div>
-      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-<div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Trained and Vetted Leadership</h3><p>Every adult leader is trained in safeguarding, mandatory reporting, and appropriate boundaries. Strict two-adult rules apply. There is no private isolation ever.</p></div>
-      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div>
-<div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div><h3>Accountable Operations</h3><p>UGI is a 501(c)(3) nonprofit with board oversight and documented safety protocols. We are built to be accountable and not just well-intentioned.</p></div>
-      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-<div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div><h3>We Are Reachable</h3><p>Questions? Want to talk before your teen shows up? Text or call us at (772) 877-5787. You should know exactly who is in the room with your kid.</p></div>
+      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="20" height="20"><line x1="12" y1="3" x2="12" y2="21"/><line x1="4" y1="9" x2="20" y2="9"/></svg></div><h3>Christian-Founded, Pressure-Free</h3><p>Biblical teaching and personal testimonies are always part of our gatherings. That is the point of what we do. Your teen will never be pressured, manipulated, or made to feel unwelcome regardless of where they stand in faith.</p></div>
+      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Trained and Vetted Leadership</h3><p>Every adult leader is trained in safeguarding, mandatory reporting, and appropriate boundaries. Strict two-adult rules apply. There is no private isolation ever.</p></div>
+      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(58,48,89,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div><h3>Accountable Operations</h3><p>UGI is a 501(c)(3) nonprofit with board oversight and documented safety protocols. We are built to be accountable and not just well-intentioned.</p></div>
+      <div class="pc"><div style="width:40px;height:40px;border-radius:10px;background:rgba(46,116,148,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div><h3>We Are Reachable</h3><p>Questions? Want to talk before your teen shows up? Text or call us at (772) 877-5787. You should know exactly who is in the room with your kid.</p></div>
+    </div>
+
+    <!-- REQUIRED FORMS STRIP -->
+    <div class="fstrip">
+      <div>
+        <h4>📋 Required Forms for Participation</h4>
+        <p>Before your teen attends their first event, please complete and return our parental consent and photo release forms. Text or email us and we will send them right over.</p>
+      </div>
+      <div class="fslinks">
+        <a href="mailto:hello@uncommongroundinitiative.org?subject=Requesting%20UGI%20Participation%20Forms&body=Hi%2C%20I%20would%20like%20to%20receive%20the%20parental%20consent%20and%20photo%20release%20forms%20for%20my%20teen." class="ppdl">📩 Email to Request Forms</a>
+        <a href="sms:+17728775787" class="ppdl">💬 Text Us for Forms</a>
+      </div>
     </div>
   </div>
 </section>
-
-<section id="inv">
   <div class="container">
     <div class="label" style="text-align:center">Get Involved</div>
     <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--navy);margin-bottom:0.7rem;text-align:center">This grows with people like you.</h2>
@@ -632,7 +794,13 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
             </div>
           </div>
         </div>
-        <a href="DONATION_LINK_HERE" class="btn bp" target="_blank" style="font-size:1rem">Give Now</a>
+        <!-- ═══ DONATE LINK SETUP ═══════════════════════════════════════════
+             STEP 1: Create your free account at zeffy.com (100% free for nonprofits)
+             STEP 2: Create a donation form in Zeffy
+             STEP 3: Copy your Zeffy donation page URL
+             STEP 4: Replace # in the href below with your Zeffy URL
+             ════════════════════════════════════════════════════════════════ -->
+        <a href="#" class="btn bp" target="_blank" style="font-size:1rem" onclick="if(this.getAttribute('href')==='#'){alert('Donation link coming soon! In the meantime, text us at (772) 877-5787.');return false;}">Give Now</a>
       </div>
       <div style="background:var(--navy);border-radius:24px;padding:3rem;text-align:center;position:relative;overflow:hidden">
         <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(183,173,222,0.08)"></div>
@@ -760,6 +928,10 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
             </select>
           </div>
           <div class="fg"><label>Message</label><textarea id="cMs" placeholder="What is on your mind?"></textarea></div>
+          <div class="chk-row">
+            <input type="checkbox" id="cCk" name="consent">
+            <label for="cCk">I understand that by submitting this form, Uncommon Ground Initiative may contact me at the email or phone number provided. My information will never be sold or shared. <a href="#" onclick="ppOpen();return false;" style="color:var(--teal);text-decoration:underline">View Privacy Policy</a></label>
+          </div>
           <button class="btn bp" style="width:100%;text-align:center" onclick="subC()">Send Message</button>
           <p class="fn">We respond to every message, usually within 24 hours.</p>
         </div>
@@ -787,7 +959,7 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
       <div class="fco"><h4>Connect</h4><p>📞 (772) 877-5787<br><br>📍 Stuart Ceramics<br>Stuart, FL<br><br>Launching August 2026<br>Port St. Lucie, FL<br><br>501(c)(3) Nonprofit</p></div>
     </div>
     <div class="fbo">
-      <p>© 2026 Uncommon Ground Initiative, Inc. All rights reserved.</p>
+      <p>© 2026 Uncommon Ground Initiative, Inc. All rights reserved. &nbsp;|&nbsp; <a href="#" onclick="ppOpen();return false;" style="color:rgba(255,255,255,0.45);text-decoration:underline;font-size:inherit">Privacy Policy</a></p>
       <div class="socs"><span class="socl" style="cursor:default;opacity:0.4">IG</span><span class="socl" style="cursor:default;opacity:0.4">FB</span></div>
     </div>
   </div>
@@ -806,6 +978,9 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
 <script>
 function tN(){document.getElementById('navLinks').classList.toggle('open')}
 function cN(){document.getElementById('navLinks').classList.remove('open')}
+function ppOpen(){document.getElementById('ppModal').classList.add('open');document.body.style.overflow='hidden';}
+function ppClose(){document.getElementById('ppModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){ppClose();}});
 function encode(data){return Object.keys(data).map(k=>encodeURIComponent(k)+'='+encodeURIComponent(data[k]||'')).join('&')}
 function subE(){
   const fn=document.getElementById('efN').value.trim();
@@ -843,13 +1018,15 @@ function subC(){
   const fn=document.getElementById('cFn').value.trim();
   const em=document.getElementById('cEm').value.trim();
   const ro=document.getElementById('cRo').value;
+  const ck=document.getElementById('cCk');
   if(!fn||!em||!ro){alert('Please fill in your name, email, and let us know who you are.');return;}
   if(!em.includes('@')){alert('Please enter a valid email address.');return;}
+  if(ck&&!ck.checked){alert('Please check the consent box to continue.');return;}
   const ln=document.getElementById('cLn').value.trim();
   const ph=document.getElementById('cPh').value.trim();
   const ms=document.getElementById('cMs').value.trim();
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:encode({'form-name':'contact',firstName:fn,lastName:ln,email:em,phone:ph,role:ro,message:ms})
+    body:encode({'form-name':'contact',firstName:fn,lastName:ln,email:em,phone:ph,role:ro,message:ms,consent:'yes'})
   }).then(()=>{
     document.getElementById('cFW').style.display='none';
     document.getElementById('cSc').style.display='block';
