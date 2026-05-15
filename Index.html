@@ -92,6 +92,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(244,242,250,
 .bw{background:var(--white);color:var(--navy);padding:0.7rem 1.5rem;font-size:0.85rem}
 .bn{background:var(--navy);color:var(--white);padding:0.7rem 1.5rem;font-size:0.85rem}
 .bt{background:var(--teal);color:var(--white);padding:0.7rem 1.5rem;font-size:0.85rem}
+.nav-dropdown{position:relative}
+.nd-toggle{font-size:0.88rem;font-weight:600;color:var(--navy);cursor:pointer;padding:0.25rem 0;white-space:nowrap}
+.nd-toggle:hover{color:var(--teal)}
+.nd-menu{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid rgba(183,173,222,0.3);border-radius:12px;box-shadow:0 8px 32px rgba(58,48,89,0.12);padding:0.5rem;min-width:160px;z-index:200;list-style:none;flex-direction:column;gap:0}
+.nav-dropdown:hover .nd-menu,.nd-menu:hover{display:flex}
+.nd-menu li a{display:block;padding:0.55rem 1rem;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;white-space:nowrap;transition:background 0.15s}
+.nd-menu li a:hover{background:var(--cream);color:var(--teal)}
 section{padding:5rem 1.5rem}.container{max-width:1100px;margin:0 auto}
 .ppm{display:none;position:fixed;inset:0;z-index:999;background:rgba(30,26,46,0.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1.5rem}
 .ppm.open{display:flex}
@@ -287,7 +294,7 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
 .socs{display:flex;gap:0.6rem}
 .socl{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.7rem;font-weight:700;transition:border-color 0.2s,color 0.2s}
 .socl:hover{border-color:var(--lav);color:var(--lav)}
-#fm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;overflow-y:auto;background:linear-gradient(155deg,#080b0f 0%,#0d1a12 40%,#130c05 100%)}
+#fm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;overflow-y:auto;background:linear-gradient(155deg,#1E1A2E 0%,#2A2147 50%,#1B2A38 100%)}
 #fm.open{display:block}
 .fo1{position:fixed;top:-100px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.1) 0%,transparent 70%);pointer-events:none;z-index:0}
 .fo2{position:fixed;bottom:-80px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.07) 0%,transparent 70%);pointer-events:none;z-index:0}
@@ -296,33 +303,33 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
 .fmcl:hover{background:rgba(255,255,255,0.14)}
 .fmw{width:100%;max-width:620px}
 .fmh{text-align:center;margin-bottom:24px}
-.fmlo{font-size:11px;letter-spacing:5px;color:#F59E0B;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;margin-bottom:4px}
-.fmsu{font-size:10px;color:rgba(255,255,255,0.28);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.fmlo{font-size:11px;letter-spacing:5px;color:#C9973A;font-family:"Inter",sans-serif;text-transform:uppercase;font-weight:bold;margin-bottom:4px}
+.fmsu{font-size:10px;color:rgba(183,173,222,0.45);font-family:"Inter",sans-serif;letter-spacing:2px;text-transform:uppercase}
 .fmdo{display:flex;gap:5px;justify-content:center;margin-bottom:20px}
 .fmd{height:3px;flex:1;max-width:70px;border-radius:2px;transition:background 0.4s}
-.fmd.a{background:rgba(245,158,11,0.45)}.fmd.d{background:#F59E0B}.fmd.i{background:rgba(255,255,255,0.07)}
-.fmca{background:rgba(255,255,255,0.03);border:1px solid rgba(245,158,11,0.11);border-radius:20px;padding:36px 40px;backdrop-filter:blur(24px);box-shadow:0 40px 80px rgba(0,0,0,0.65)}
+.fmd.a{background:rgba(201,151,58,0.4)}.fmd.d{background:#C9973A}.fmd.i{background:rgba(183,173,222,0.12)}
+.fmca{background:rgba(58,48,89,0.35);border:1px solid rgba(183,173,222,0.15);border-radius:20px;padding:36px 40px;backdrop-filter:blur(24px);box-shadow:0 40px 80px rgba(0,0,0,0.5)}
 .fmsh{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
 .fmem{font-size:32px;line-height:1;margin-top:3px}
-.fmst{font-size:10px;color:rgba(245,158,11,0.55);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
-.fmti{font-size:22px;font-weight:bold;color:#FEF3C7;font-family:Georgia,serif;margin:0}
+.fmst{font-size:10px;color:rgba(201,151,58,0.65);font-family:"Inter",sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.fmti{font-size:22px;font-weight:700;color:#B7ADDE;font-family:"Poppins",sans-serif;margin:0}
 .fmqg{margin-bottom:22px}
-.fmlb{display:block;font-size:14px;color:rgba(254,243,199,0.78);margin-bottom:9px;line-height:1.6;font-family:Arial,sans-serif}
-.fminp{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;box-sizing:border-box;transition:border-color 0.2s}
-.fminp:focus{border-color:rgba(245,158,11,0.5)}
-.fmta{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;resize:vertical;min-height:85px;box-sizing:border-box;transition:border-color 0.2s}
-.fmta:focus{border-color:rgba(245,158,11,0.5)}
-.fmse{width:100%;background:#0a0e07;border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;box-sizing:border-box;cursor:pointer;-webkit-appearance:none}
+.fmlb{display:block;font-size:14px;color:rgba(183,173,222,0.82);margin-bottom:9px;line-height:1.6;font-family:"Inter",sans-serif}
+.fminp{width:100%;background:rgba(58,48,89,0.4);border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.92);outline:none;font-family:"Inter",sans-serif;box-sizing:border-box;transition:border-color 0.2s}
+.fminp:focus{border-color:rgba(183,173,222,0.55)}
+.fmta{width:100%;background:rgba(58,48,89,0.4);border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.92);outline:none;font-family:"Inter",sans-serif;resize:vertical;min-height:85px;box-sizing:border-box;transition:border-color 0.2s}
+.fmta:focus{border-color:rgba(183,173,222,0.55)}
+.fmse{width:100%;background:#1A1630;border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.88);outline:none;font-family:"Inter",sans-serif;box-sizing:border-box;cursor:pointer;-webkit-appearance:none}
 .fmrg{display:flex;flex-direction:column;gap:7px}
-.fmro{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:10px;cursor:pointer;transition:all 0.15s;border:1px solid rgba(245,158,11,0.1);background:rgba(255,255,255,0.02)}
-.fmro.sel{border-color:rgba(245,158,11,0.48);background:rgba(245,158,11,0.07)}
-.fmrc{width:16px;height:16px;border-radius:50%;border:2px solid rgba(245,158,11,0.28);background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
-.fmro.sel .fmrc{border-color:#F59E0B;background:#F59E0B}
-.fmrd{width:5px;height:5px;border-radius:50%;background:#0f0c07}
-.fmrl{font-size:13px;color:rgba(254,243,199,0.78);font-family:Arial,sans-serif;line-height:1.5}
+.fmro{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:10px;cursor:pointer;transition:all 0.15s;border:1px solid rgba(183,173,222,0.12);background:rgba(58,48,89,0.25)}
+.fmro.sel{border-color:rgba(183,173,222,0.5);background:rgba(183,173,222,0.1)}
+.fmrc{width:16px;height:16px;border-radius:50%;border:2px solid rgba(183,173,222,0.3);background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.fmro.sel .fmrc{border-color:#B7ADDE;background:#B7ADDE}
+.fmrd{width:5px;height:5px;border-radius:50%;background:#1E1A2E}
+.fmrl{font-size:13px;color:rgba(255,255,255,0.78);font-family:"Inter",sans-serif;line-height:1.5}
 .fmbr{display:flex;gap:10px;justify-content:flex-end;margin-top:28px}
-.fmbk{padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.38);font-size:13px;font-family:Arial,sans-serif;cursor:pointer}
-.fmnx{padding:10px 28px;border-radius:10px;border:none;background:linear-gradient(135deg,#F59E0B,#D97706);color:#0f0c07;font-size:13px;font-family:Arial,sans-serif;font-weight:bold;cursor:pointer;box-shadow:0 4px 18px rgba(245,158,11,0.22)}
+.fmbk{padding:10px 20px;border-radius:10px;border:1px solid rgba(183,173,222,0.2);background:transparent;color:rgba(183,173,222,0.5);font-size:13px;font-family:"Inter",sans-serif;cursor:pointer}
+.fmnx{padding:10px 28px;border-radius:10px;border:none;background:linear-gradient(135deg,#3A3059,#2E7494);color:#fff;font-size:13px;font-family:"Inter",sans-serif;font-weight:600;cursor:pointer;box-shadow:0 4px 18px rgba(46,116,148,0.3)}
 @media(max-width:960px){
   .hi,.sg,.rg,.eg,.fb2,.prg,.cg,.nhg{grid-template-columns:1fr}
   .hvs{display:none}.sti{grid-template-columns:repeat(2,1fr)}
@@ -334,48 +341,50 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
   section{padding:3.5rem 1.25rem}nav{padding:0 1.25rem}
   .nl{display:none}
   .nl.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(244,242,250,0.98);backdrop-filter:blur(12px);padding:1.5rem 2rem 2rem;gap:1.25rem;border-bottom:1px solid rgba(183,173,222,0.3);z-index:99}
+  .nl.open .nav-dropdown .nd-menu{display:flex;position:static;transform:none;box-shadow:none;border:none;border-left:2px solid rgba(183,173,222,0.3);border-radius:0;padding:0.25rem 0 0 1rem;margin-top:0.25rem;background:transparent}
+  .nl.open .nav-dropdown .nd-menu li a{padding:0.4rem 0.5rem;font-size:0.85rem}
   .hbg{display:flex}.xg{grid-template-columns:1fr}.fr{grid-template-columns:1fr}
   .fmca{padding:28px 20px}.rp{grid-template-columns:1fr}.rp .tall{height:280px}
   .nhg,.nhc{grid-template-columns:1fr}
 }
 
 /* GET TO KNOW YOU MODAL */
-#gtkModal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;overflow-y:auto;background:linear-gradient(155deg,#080b0f 0%,#0d1a12 40%,#130c05 100%)}
+#gtkModal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;overflow-y:auto;background:linear-gradient(155deg,#1E1A2E 0%,#2A2147 50%,#1B2A38 100%)}
 #gtkModal.open{display:block}
-.gOrb1{position:fixed;top:-100px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.1) 0%,transparent 70%);pointer-events:none;z-index:0}
-.gOrb2{position:fixed;bottom:-80px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.07) 0%,transparent 70%);pointer-events:none;z-index:0}
+.gOrb1{position:fixed;top:-100px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,151,58,0.13) 0%,transparent 70%);pointer-events:none;z-index:0}
+.gOrb2{position:fixed;bottom:-80px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(183,173,222,0.1) 0%,transparent 70%);pointer-events:none;z-index:0}
 .gInner{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;position:relative;z-index:1}
-.gClose{position:fixed;top:18px;right:20px;z-index:10000;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,0.6);font-size:18px;font-family:Arial,sans-serif;transition:background 0.2s}
-.gClose:hover{background:rgba(255,255,255,0.14)}
+.gClose{position:fixed;top:18px;right:20px;z-index:10000;background:rgba(255,255,255,0.07);border:1px solid rgba(183,173,222,0.2);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,0.55);font-size:18px;font-family:Arial,sans-serif;transition:background 0.2s}
+.gClose:hover{background:rgba(183,173,222,0.15)}
 .gWrap{width:100%;max-width:620px}
 .gHdr{text-align:center;margin-bottom:24px}
-.gLogo{font-size:11px;letter-spacing:5px;color:#F59E0B;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;margin-bottom:4px}
-.gSub{font-size:10px;color:rgba(255,255,255,0.28);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.gLogo{font-size:11px;letter-spacing:5px;color:#C9973A;font-family:Arial,sans-serif;text-transform:uppercase;font-weight:bold;margin-bottom:4px}
+.gSub{font-size:10px;color:rgba(183,173,222,0.45);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
 .gDots{display:flex;gap:5px;justify-content:center;margin-bottom:20px}
 .gDot{height:3px;flex:1;max-width:70px;border-radius:2px;transition:background 0.4s}
-.gDot.a{background:rgba(245,158,11,0.45)}.gDot.d{background:#F59E0B}.gDot.i{background:rgba(255,255,255,0.07)}
-.gCard{background:rgba(255,255,255,0.03);border:1px solid rgba(245,158,11,0.11);border-radius:20px;padding:36px 40px;backdrop-filter:blur(24px);box-shadow:0 40px 80px rgba(0,0,0,0.65),inset 0 1px 0 rgba(255,255,255,0.04)}
+.gDot.a{background:rgba(201,151,58,0.4)}.gDot.d{background:#C9973A}.gDot.i{background:rgba(183,173,222,0.12)}
+.gCard{background:rgba(58,48,89,0.35);border:1px solid rgba(183,173,222,0.15);border-radius:20px;padding:36px 40px;backdrop-filter:blur(24px);box-shadow:0 40px 80px rgba(0,0,0,0.5),inset 0 1px 0 rgba(183,173,222,0.06)}
 .gSecHdr{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
 .gEmoji{font-size:32px;line-height:1;margin-top:3px}
-.gStep{font-size:10px;color:rgba(245,158,11,0.55);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
-.gTitle{font-size:22px;font-weight:bold;color:#FEF3C7;font-family:Georgia,serif;margin:0}
+.gStep{font-size:10px;color:rgba(201,151,58,0.65);font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.gTitle{font-size:22px;font-weight:bold;color:#B7ADDE;font-family:"Poppins",sans-serif;margin:0}
 .gQ{margin-bottom:24px}
-.gLbl{display:block;font-size:14px;color:rgba(254,243,199,0.78);margin-bottom:9px;line-height:1.6;font-family:Arial,sans-serif}
-.gInp{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;box-sizing:border-box;transition:border-color 0.2s}
-.gInp:focus{border-color:rgba(245,158,11,0.5)}
-.gTa{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;resize:vertical;min-height:85px;box-sizing:border-box;transition:border-color 0.2s}
-.gTa:focus{border-color:rgba(245,158,11,0.5)}
-.gSel{width:100%;background:#0a0e07;border:1px solid rgba(245,158,11,0.17);border-radius:10px;padding:11px 15px;font-size:14px;color:#FEF3C7;outline:none;font-family:Arial,sans-serif;box-sizing:border-box;cursor:pointer;-webkit-appearance:none}
+.gLbl{display:block;font-size:14px;color:rgba(183,173,222,0.82);margin-bottom:9px;line-height:1.6;font-family:"Inter",sans-serif}
+.gInp{width:100%;background:rgba(58,48,89,0.4);border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.92);outline:none;font-family:"Inter",sans-serif;box-sizing:border-box;transition:border-color 0.2s}
+.gInp:focus{border-color:rgba(183,173,222,0.55)}
+.gTa{width:100%;background:rgba(58,48,89,0.4);border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.92);outline:none;font-family:"Inter",sans-serif;resize:vertical;min-height:85px;box-sizing:border-box;transition:border-color 0.2s}
+.gTa:focus{border-color:rgba(183,173,222,0.55)}
+.gSel{width:100%;background:#1A1630;border:1px solid rgba(183,173,222,0.2);border-radius:10px;padding:11px 15px;font-size:14px;color:rgba(255,255,255,0.88);outline:none;font-family:"Inter",sans-serif;box-sizing:border-box;cursor:pointer;-webkit-appearance:none}
 .gRg{display:flex;flex-direction:column;gap:7px}
-.gRo{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:10px;cursor:pointer;transition:all 0.15s;border:1px solid rgba(245,158,11,0.1);background:rgba(255,255,255,0.02)}
-.gRo.sel{border-color:rgba(245,158,11,0.48);background:rgba(245,158,11,0.07)}
-.gRc{width:16px;height:16px;border-radius:50%;border:2px solid rgba(245,158,11,0.28);background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
-.gRo.sel .gRc{border-color:#F59E0B;background:#F59E0B}
-.gRd{width:5px;height:5px;border-radius:50%;background:#0f0c07}
-.gRl{font-size:13px;color:rgba(254,243,199,0.78);font-family:Arial,sans-serif;line-height:1.5}
+.gRo{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:10px;cursor:pointer;transition:all 0.15s;border:1px solid rgba(183,173,222,0.12);background:rgba(58,48,89,0.25)}
+.gRo.sel{border-color:rgba(183,173,222,0.5);background:rgba(183,173,222,0.1)}
+.gRc{width:16px;height:16px;border-radius:50%;border:2px solid rgba(183,173,222,0.3);background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.gRo.sel .gRc{border-color:#B7ADDE;background:#B7ADDE}
+.gRd{width:5px;height:5px;border-radius:50%;background:#1E1A2E}
+.gRl{font-size:13px;color:rgba(255,255,255,0.78);font-family:"Inter",sans-serif;line-height:1.5}
 .gBtnRow{display:flex;gap:10px;justify-content:flex-end;margin-top:28px}
-.gBack{padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.38);font-size:13px;font-family:Arial,sans-serif;cursor:pointer}
-.gNext{padding:10px 28px;border-radius:10px;border:none;background:linear-gradient(135deg,#F59E0B,#D97706);color:#0f0c07;font-size:13px;font-family:Arial,sans-serif;font-weight:bold;cursor:pointer;box-shadow:0 4px 18px rgba(245,158,11,0.22)}
+.gBack{padding:10px 20px;border-radius:10px;border:1px solid rgba(183,173,222,0.2);background:transparent;color:rgba(183,173,222,0.5);font-size:13px;font-family:"Inter",sans-serif;cursor:pointer}
+.gNext{padding:10px 28px;border-radius:10px;border:none;background:linear-gradient(135deg,#3A3059,#2E7494);color:#fff;font-size:13px;font-family:"Inter",sans-serif;font-weight:600;cursor:pointer;box-shadow:0 4px 18px rgba(46,116,148,0.3)}
 @media(max-width:520px){.gCard{padding:28px 20px}}
 </style>
 </head>
@@ -445,15 +454,9 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
   <form name="email-signup" netlify netlify-honeypot="bot-field">
     <input name="bot-field"><input name="firstName"><input name="email"><input name="phone">
   </form>
-  <form name="get-to-know-you" netlify netlify-honeypot="bot-field">
-    <input name="bot-field"><input name="name"><input name="age"><input name="grade">
-    <input name="school"><input name="church"><input name="vibe"><input name="food">
-    <input name="fact"><input name="lovelang"><input name="wouldyou"><input name="goodat">
-    <textarea name="struggle"></textarea><textarea name="need"></textarea>
-    <input name="oneword"><textarea name="hoping"></textarea><textarea name="knowus"></textarea>
-    <input name="knowjesus"><input name="howlong"><textarea name="godrn"></textarea>
-    <textarea name="scripture"></textarea><textarea name="question"></textarea>
-    <textarea name="prayfor"></textarea><textarea name="holdsback"></textarea>
+  <form name="parent-forms-request" netlify netlify-honeypot="bot-field">
+    <input name="bot-field"><input name="parentFirstName"><input name="parentLastName">
+    <input name="email"><input name="phone"><input name="teenName"><input name="teenAge"><textarea name="notes"></textarea>
   </form>
 </div>
 
@@ -517,6 +520,15 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
     <li><a href="#expect" onclick="cN()">What to Expect</a></li>
     <li><a href="#faq" onclick="cN()">FAQ</a></li>
     <li><a href="#pr" onclick="cN()">Prayer</a></li>
+    <li><a href="forms.html" onclick="cN()">Forms</a></li>
+    <li class="nav-dropdown">
+      <span class="nd-toggle">Get Involved ▾</span>
+      <ul class="nd-menu">
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="partner.html">Partner With Us</a></li>
+        <li><a href="#inv" onclick="cN()">Donate</a></li>
+      </ul>
+    </li>
     <li><a href="#" class="nc btn" onclick="gOpen();return false;">I'm New Here</a></li>
   </ul>
   <div class="hbg" id="hbtn" onclick="tN()"><span></span><span></span><span></span></div>
@@ -735,22 +747,57 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
     <div class="fstrip">
       <div>
         <h4>📋 Required Forms for Participation</h4>
-        <p>Before your teen attends their first event, please complete and return our parental consent and photo release forms. Text or email us and we will send them right over.</p>
+        <p>Both forms must be on file before your teen's first event. Fill them out online — takes about 5 minutes, digital signature accepted.</p>
       </div>
       <div class="fslinks">
-        <a href="mailto:hello@uncommongroundinitiative.org?subject=Requesting%20UGI%20Participation%20Forms&body=Hi%2C%20I%20would%20like%20to%20receive%20the%20parental%20consent%20and%20photo%20release%20forms%20for%20my%20teen." class="ppdl">📩 Email to Request Forms</a>
-        <a href="sms:+17728775787" class="ppdl">💬 Text Us for Forms</a>
+        <a href="consent.html" class="btn bn" style="font-size:0.85rem;padding:0.55rem 1.4rem;border-radius:50px">Consent Waiver</a>
+        <a href="release.html" class="btn" style="font-size:0.85rem;padding:0.55rem 1.4rem;border-radius:50px;background:var(--teal);color:#fff">Photo Release</a>
+        <a href="forms.html" class="ppdl" style="font-size:0.8rem">Or download PDFs</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- PARENT FORMS REQUEST MODAL -->
+<div id="pfModal" style="display:none;position:fixed;inset:0;z-index:990;background:rgba(30,26,46,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1.5rem" onclick="if(event.target===this)pfClose()">
+  <div style="background:#fff;border-radius:20px;max-width:560px;width:100%;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto">
+    <button onclick="pfClose()" style="position:absolute;top:1rem;right:1.25rem;font-size:1.1rem;cursor:pointer;color:#888;background:none;border:none;line-height:1">✕</button>
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem">For Parents & Guardians</div>
+    <h2 style="font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem">Request Participation Forms</h2>
+    <p style="font-size:0.86rem;color:var(--md);margin-bottom:1.5rem;line-height:1.6">Fill this out and we will email you the Parental Consent Waiver and Photo Release Form within 24 hours. Both must be completed before your teen's first event.</p>
+    <div id="pfFormWrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+        <div class="fg"><label>Your First Name</label><input type="text" id="pfPn" placeholder="Jordan"></div>
+        <div class="fg"><label>Your Last Name</label><input type="text" id="pfPl" placeholder="Smith"></div>
+      </div>
+      <div class="fg" style="margin-bottom:0.75rem"><label>Your Email Address</label><input type="email" id="pfEm" placeholder="you@email.com"></div>
+      <div class="fg" style="margin-bottom:0.75rem"><label>Your Phone Number</label><input type="tel" id="pfPh" placeholder="(772) 000-0000"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+        <div class="fg"><label>Teen's First Name</label><input type="text" id="pfTn" placeholder="Teen's name"></div>
+        <div class="fg"><label>Teen's Age</label><input type="number" id="pfTa" placeholder="13–18" min="13" max="18"></div>
+      </div>
+      <div class="fg" style="margin-bottom:1rem"><label>Any questions or notes for us?</label><textarea id="pfNt" placeholder="Anything we should know..." style="min-height:80px"></textarea></div>
+      <div class="chk-row" style="margin-bottom:1.25rem">
+        <input type="checkbox" id="pfCk">
+        <label for="pfCk" style="font-size:0.82rem;color:var(--md)">I understand UGI will use this information only to send the requested forms and follow up about my teen's participation. <a href="#" onclick="ppOpen();return false;" style="color:var(--teal)">Privacy Policy</a></label>
+      </div>
+      <button onclick="pfSubmit()" class="btn bp" style="width:100%;text-align:center">Send My Request</button>
+      <p style="font-size:0.78rem;color:var(--lt);text-align:center;margin-top:0.75rem">We respond within 24 hours. You can also text us at (772) 877-5787.</p>
+    </div>
+    <div id="pfSuccess" style="display:none;text-align:center;padding:2rem 1rem">
+      <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+      <h3 style="font-family:Poppins,sans-serif;color:var(--navy);margin-bottom:0.5rem">Request received.</h3>
+      <p style="font-size:0.9rem;color:var(--md)">We will email you the forms within 24 hours. If you need them sooner, text us at (772) 877-5787.</p>
+    </div>
+  </div>
+</div>
   <div class="container">
     <div class="label" style="text-align:center">Get Involved</div>
     <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--navy);margin-bottom:0.7rem;text-align:center">This grows with people like you.</h2>
     <p style="color:var(--md);font-size:1rem;margin-bottom:2.5rem;text-align:center;max-width:560px;margin-left:auto;margin-right:auto">Whether you want to serve, give, or partner, there is a place for you here.</p>
     <div class="ig2">
-      <div class="ic2 cn"><div class="ii2" style="color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><h3>Volunteer</h3><p>We need adults who lead with presence and not performance. If you genuinely care about this generation and can commit to showing up, we want to talk.</p><a href="#ct" class="btn bn">Apply to Serve</a></div>
-      <div class="ic2 ct"><div class="ii2" style="color:var(--white)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M2 12l9 9 4-4"/><path d="M17 3l4 4-9 9"/><path d="M7 17l-4 4"/><path d="M14 3l4 4-6 6"/></svg></div><h3>Partner</h3><p>Businesses, organizations, and community leaders. Let us build this together. Your sponsorship puts UGI in front of more teens who need it.</p><a href="#ct" class="btn bw">Partner With Us</a></div>
+      <div class="ic2 cn"><div class="ii2" style="color:var(--navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><h3>Volunteer</h3><p>We need adults who lead with presence and not performance. If you genuinely care about this generation and can commit to showing up, we want to talk.</p><a href="volunteer.html" class="btn bn">Apply to Serve</a></div>
+      <div class="ic2 ct"><div class="ii2" style="color:var(--white)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M2 12l9 9 4-4"/><path d="M17 3l4 4-9 9"/><path d="M7 17l-4 4"/><path d="M14 3l4 4-6 6"/></svg></div><h3>Partner</h3><p>Businesses, organizations, and community leaders. Let us build this together. Your sponsorship puts UGI in front of more teens who need it.</p><a href="partner.html" class="btn bw">Partner With Us</a></div>
 
     </div>
   </div>
@@ -906,7 +953,7 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
         <h3>Find us</h3>
         <div class="cd"><div class="cdi" style="color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="cdt"><p>Phone and Text</p><p><a href="tel:+17728775787">(772) 877-5787</a></p></div></div>
         <div class="cd"><div class="cdi" style="color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="cdt"><p>Currently Gathering At</p><p>Stuart Ceramics in Stuart, FL</p></div></div>
-        <div class="cd"><div class="cdi" style="color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><div class="cdt"><p>Social Media</p><p style="color:var(--lt);font-size:0.82rem">Coming soon. @UncommonGroundInitiative</p></div></div>
+        <div class="cd"><div class="cdi" style="color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><div class="cdt"><p>Follow Us</p><p><a href="https://www.instagram.com/uncommongroundinitiative" target="_blank" style="color:var(--teal);font-size:0.85rem">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/uncommongroundinitiative" target="_blank" style="color:var(--teal);font-size:0.85rem">Facebook</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@uncommongroundinitiative" target="_blank" style="color:var(--teal);font-size:0.85rem">TikTok</a></p></div></div>
         <div class="me"><iframe src="https://maps.google.com/maps?q=Stuart+Ceramics+Stuart+FL&output=embed" allowfullscreen loading="lazy" title="Stuart Ceramics"></iframe></div>
         <a href="https://maps.google.com/?q=Stuart+Ceramics+Stuart+FL" target="_blank" class="mb">Open in Google Maps</a>
       </div>
@@ -952,15 +999,20 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
       <div class="fco"><h4>Navigate</h4><ul>
         <li><a href="#story">Our Story</a></li><li><a href="#events">Events</a></li>
         <li><a href="#expect">What to Expect</a></li><li><a href="#faq">FAQ</a></li>
-        <li><a href="#parents">For Parents</a></li><li><a href="#pr">Prayer Requests</a></li>
-        <li><a href="#inv">Get Involved</a></li>
-          <li><a href="#donate">Donate</a></li><li><a href="#" onclick="gOpen();return false;">I'm New Here</a></li>
+        <li><a href="#parents">For Parents</a></li><li><a href="forms.html">Forms</a></li>
+        <li><a href="#pr">Prayer Requests</a></li><li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="partner.html">Partner With Us</a></li><li><a href="#inv">Donate</a></li>
+        <li><a href="#" onclick="gOpen();return false;">I'm New Here</a></li>
       </ul></div>
       <div class="fco"><h4>Connect</h4><p>📞 (772) 877-5787<br><br>📍 Stuart Ceramics<br>Stuart, FL<br><br>Launching August 2026<br>Port St. Lucie, FL<br><br>501(c)(3) Nonprofit</p></div>
     </div>
     <div class="fbo">
       <p>© 2026 Uncommon Ground Initiative, Inc. All rights reserved. &nbsp;|&nbsp; <a href="#" onclick="ppOpen();return false;" style="color:rgba(255,255,255,0.45);text-decoration:underline;font-size:inherit">Privacy Policy</a></p>
-      <div class="socs"><span class="socl" style="cursor:default;opacity:0.4">IG</span><span class="socl" style="cursor:default;opacity:0.4">FB</span></div>
+      <div class="socs">
+        <a href="https://www.instagram.com/uncommongroundinitiative" target="_blank" class="socl" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/uncommongroundinitiative" target="_blank" class="socl" aria-label="Facebook">FB</a>
+        <a href="https://www.tiktok.com/@uncommongroundinitiative" target="_blank" class="socl" aria-label="TikTok">TT</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -978,9 +1030,28 @@ footer{background:var(--navy);color:var(--white);padding:4rem 1.5rem 2rem}
 <script>
 function tN(){document.getElementById('navLinks').classList.toggle('open')}
 function cN(){document.getElementById('navLinks').classList.remove('open')}
-function ppOpen(){document.getElementById('ppModal').classList.add('open');document.body.style.overflow='hidden';}
-function ppClose(){document.getElementById('ppModal').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){ppClose();}});
+function pfOpen(){const m=document.getElementById('pfModal');m.style.display='flex';document.body.style.overflow='hidden';}
+function pfClose(){const m=document.getElementById('pfModal');m.style.display='none';document.body.style.overflow='';}
+function pfSubmit(){
+  const pn=document.getElementById('pfPn').value.trim();
+  const em=document.getElementById('pfEm').value.trim();
+  const tn=document.getElementById('pfTn').value.trim();
+  const ck=document.getElementById('pfCk');
+  if(!pn||!em){alert('Please enter your name and email.');return;}
+  if(!em.includes('@')){alert('Please enter a valid email address.');return;}
+  if(!ck.checked){alert('Please check the consent box to continue.');return;}
+  const pl=document.getElementById('pfPl').value.trim();
+  const ph=document.getElementById('pfPh').value.trim();
+  const ta=document.getElementById('pfTa').value.trim();
+  const nt=document.getElementById('pfNt').value.trim();
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:encode({'form-name':'parent-forms-request',parentFirstName:pn,parentLastName:pl,email:em,phone:ph,teenName:tn,teenAge:ta,notes:nt})
+  }).then(()=>pfSuccess()).catch(()=>pfSuccess());
+}
+function pfSuccess(){
+  document.getElementById('pfFormWrap').style.display='none';
+  document.getElementById('pfSuccess').style.display='block';
+}
 function encode(data){return Object.keys(data).map(k=>encodeURIComponent(k)+'='+encodeURIComponent(data[k]||'')).join('&')}
 function subE(){
   const fn=document.getElementById('efN').value.trim();
@@ -1090,9 +1161,11 @@ function fR(){
 function fSh(){
   const n=fAns.name||null;
   document.getElementById('fmDots').innerHTML=fS.map(()=>'<div class="fmd d"></div>').join('');
-  document.getElementById('fmCard').innerHTML=`<div style="text-align:center;padding:48px 28px"><div style="font-size:56px;margin-bottom:18px">🙌</div><div style="font-size:24px;color:#FEF3C7;font-family:Georgia,serif;font-weight:bold;margin-bottom:14px">${n?`We see you, ${n}.`:'We see you.'}</div><div style="font-size:14px;color:rgba(255,255,255,0.48);font-family:Arial,sans-serif;line-height:1.85;margin-bottom:28px">Thank you for being real with us.<br><span style="color:#F59E0B">You belong here exactly as you are.</span><br><br>Someone from UGI will reach out to you personally.<br>You are not just a face in the room.</div><button style="padding:11px 30px;border-radius:10px;border:1px solid rgba(245,158,11,0.3);background:transparent;color:#F59E0B;font-size:11px;font-family:Arial,sans-serif;cursor:pointer;letter-spacing:2px;text-transform:uppercase" onclick="cF()">Close</button></div>`;
+  document.getElementById('fmCard').innerHTML=`<div style="text-align:center;padding:48px 28px"><div style="font-size:56px;margin-bottom:18px">🙌</div><div style="font-size:24px;color:#B7ADDE;font-family:'Poppins',sans-serif;font-weight:800;margin-bottom:14px">${n?`We see you, ${n}.`:'We see you.'}</div><div style="font-size:14px;color:rgba(183,173,222,0.7);font-family:'Inter',sans-serif;line-height:1.85;margin-bottom:28px">Thank you for being real with us.<br><span style="color:#C9973A">You belong here exactly as you are.</span><br><br>Someone from UGI will reach out to you personally.<br>You are not just a face in the room.</div><button style="padding:11px 30px;border-radius:10px;border:1px solid rgba(201,151,58,0.35);background:transparent;color:#C9973A;font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:2px;text-transform:uppercase" onclick="cF()">Close</button></div>`;
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')cF();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){cF();gClose();pfClose();if(document.getElementById('ppModal').classList.contains('open')){document.getElementById('ppModal').classList.remove('open');document.body.style.overflow='';}const pf=document.getElementById('pfModal');if(pf&&pf.style.display==='flex'){pf.style.display='none';document.body.style.overflow='';}}}); 
+function ppOpen(){document.getElementById('ppModal').classList.add('open');document.body.style.overflow='hidden';}
+function ppClose(){document.getElementById('ppModal').classList.remove('open');document.body.style.overflow='';}
 </script>
 
 <!-- GET TO KNOW YOU MODAL -->
@@ -1220,16 +1293,16 @@ function gShowSuccess(){
   document.getElementById('gCard').innerHTML=`
     <div style="text-align:center;padding:48px 28px">
       <div style="font-size:56px;margin-bottom:18px">🙌</div>
-      <div style="font-size:24px;color:#FEF3C7;font-family:Georgia,serif;font-weight:bold;margin-bottom:14px">
+      <div style="font-size:24px;color:#B7ADDE;font-family:'Poppins',sans-serif;font-weight:800;margin-bottom:14px">
         ${name?`We see you, ${name}.`:'We see you.'}
       </div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.48);font-family:Arial,sans-serif;line-height:1.85;margin-bottom:28px">
+      <div style="font-size:14px;color:rgba(183,173,222,0.7);font-family:'Inter',sans-serif;line-height:1.85;margin-bottom:28px">
         Thank you for being real with us.<br>
-        <span style="color:#F59E0B">You belong here exactly as you are.</span><br><br>
+        <span style="color:#C9973A">You belong here exactly as you are.</span><br><br>
         Someone from UGI will reach out to you personally.<br>
         You are not just a face in the room.
       </div>
-      <button style="padding:11px 30px;border-radius:10px;border:1px solid rgba(245,158,11,0.3);background:transparent;color:#F59E0B;font-size:11px;font-family:Arial,sans-serif;cursor:pointer;letter-spacing:2px;text-transform:uppercase" onclick="gClose()">Close</button>
+      <button style="padding:11px 30px;border-radius:10px;border:1px solid rgba(201,151,58,0.35);background:transparent;color:#C9973A;font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:2px;text-transform:uppercase" onclick="gClose()">Close</button>
     </div>`;
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){gClose();}});
