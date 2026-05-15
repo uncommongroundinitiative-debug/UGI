@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo & Video Release | Uncommon Ground Initiative</title>
+<meta name="description" content="Complete the UGI Photo & Video Release Form online with digital signature.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+<style>
+:root{--navy:#3A3059;--teal:#2E7494;--lav:#B7ADDE;--mauve:#CCA3CD;--cream:#F4F2FA;--white:#fff;--gold:#C9973A;--dk:#1E1A2E;--md:#4A3E65;--lt:#8577A0;--red:#C0392B}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;background:var(--cream);color:var(--dk);font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:"Poppins",sans-serif;line-height:1.2}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(244,242,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(183,173,222,0.3);padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nbt{font-family:"Poppins",sans-serif;font-weight:800;font-size:0.83rem;color:var(--navy);text-transform:uppercase;letter-spacing:0.04em;line-height:1.15}
+.nbt span{display:block;font-size:0.5rem;font-weight:600;color:var(--gold);letter-spacing:0.18em}
+.back-btn{font-family:"Poppins",sans-serif;font-size:0.85rem;font-weight:600;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:0.4rem;padding:0.45rem 1rem;border:1px solid rgba(183,173,222,0.4);border-radius:50px;transition:background 0.2s}
+.back-btn:hover{background:rgba(183,173,222,0.15)}
+.hero{background:linear-gradient(135deg,var(--teal),var(--navy));padding:5.5rem 1.5rem 3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;border-radius:50%;background:rgba(183,173,222,0.07);pointer-events:none}
+.hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.hero .label{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--lav);margin-bottom:0.6rem}
+.hero h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;color:var(--white);margin-bottom:0.6rem}
+.hero p{font-size:0.92rem;color:rgba(255,255,255,0.7);line-height:1.7}
+.form-wrap{max-width:680px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.section-card{background:var(--white);border-radius:20px;padding:2rem;border:1px solid rgba(183,173,222,0.2);box-shadow:0 4px 20px rgba(58,48,89,0.05);margin-bottom:1.5rem}
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.section-card h2{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1.5px solid var(--cream)}
+.fg{display:flex;flex-direction:column;margin-bottom:1rem}
+.fg label{font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.3rem}
+.fg input,.fg select{font-family:"Inter",sans-serif;font-size:0.92rem;padding:0.7rem 1rem;border:1.5px solid rgba(183,173,222,0.35);border-radius:10px;outline:none;background:var(--white);color:var(--dk);transition:border-color 0.2s,box-shadow 0.2s}
+.fg input:focus,.fg select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(46,116,148,0.1)}
+.fg input.err{border-color:var(--red)}
+.fg select{cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238577A0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.info-box{background:var(--cream);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;margin-bottom:1.25rem}
+.info-box p{font-size:0.83rem;color:var(--md);line-height:1.65}
+.option-card{border:2px solid rgba(183,173,222,0.25);border-radius:14px;padding:1.25rem;margin-bottom:0.85rem;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.option-card:hover{border-color:rgba(183,173,222,0.5)}
+.option-card.selected{border-color:var(--teal);background:rgba(46,116,148,0.04)}
+.option-card.selected-navy{border-color:var(--navy);background:rgba(58,48,89,0.04)}
+.option-card.selected-gray{border-color:#888;background:rgba(136,136,136,0.04)}
+.option-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem}
+.option-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(183,173,222,0.4);flex-shrink:0;transition:all 0.2s;display:flex;align-items:center;justify-content:center}
+.option-card.selected .option-dot,.option-card.selected-navy .option-dot,.option-card.selected-gray .option-dot{border-color:var(--navy);background:var(--navy)}
+.option-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--white);display:none}
+.option-card.selected .option-dot::after,.option-card.selected-navy .option-dot::after,.option-card.selected-gray .option-dot::after{display:block}
+.option-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.2rem 0.65rem;border-radius:20px}
+.tag-teal{background:rgba(46,116,148,0.12);color:var(--teal)}
+.tag-navy{background:rgba(58,48,89,0.1);color:var(--navy)}
+.tag-gray{background:rgba(136,136,136,0.1);color:#666}
+.option-card h3{font-size:0.95rem;font-weight:700;color:var(--navy)}
+.option-card p{font-size:0.83rem;color:var(--md);line-height:1.65;margin-top:0.3rem}
+.limited-checks{padding:0.75rem 0 0 2.5rem;display:none;flex-direction:column;gap:0.5rem}
+.limited-checks.show{display:flex}
+.limit-item{display:flex;align-items:center;gap:0.65rem;font-size:0.85rem;color:var(--md)}
+.limit-item input{accent-color:var(--navy);width:15px;height:15px}
+.chk-row{display:flex;align-items:flex-start;gap:0.65rem;padding:0.9rem 1rem;background:var(--cream);border-radius:10px;border:1.5px solid rgba(183,173,222,0.2);margin-bottom:0.75rem}
+.chk-row input[type=checkbox]{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--navy);cursor:pointer}
+.chk-row label{font-size:0.85rem;color:var(--md);line-height:1.6;cursor:pointer}
+.sig-canvas-wrap{border:2px solid rgba(183,173,222,0.4);border-radius:12px;background:#FAFAFE;position:relative;overflow:hidden;touch-action:none}
+.sig-canvas-wrap canvas{display:block;width:100%;height:160px;cursor:crosshair;touch-action:none}
+.sig-canvas-wrap.signed{border-color:var(--teal)}
+.sig-canvas-wrap.sig-err{border-color:var(--red)}
+.sig-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:0.8rem;color:rgba(133,119,160,0.4);pointer-events:none;text-align:center;font-style:italic;transition:opacity 0.2s}
+.sig-hint.hidden{opacity:0}
+.sig-actions{display:flex;justify-content:flex-end;margin-top:0.5rem}
+.sig-clear{font-size:0.8rem;color:var(--lt);background:none;border:1px solid rgba(183,173,222,0.3);border-radius:20px;padding:0.3rem 0.85rem;cursor:pointer;font-family:"Inter",sans-serif;transition:color 0.2s}
+.sig-clear:hover{color:var(--navy)}
+.submit-btn{width:100%;padding:1rem;background:var(--teal);color:var(--white);border:none;border-radius:50px;font-family:"Poppins",sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:opacity 0.2s,transform 0.15s;display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-top:0.5rem}
+.submit-btn:hover{opacity:0.88;transform:translateY(-1px)}
+.submit-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.success-wrap{display:none;text-align:center;background:var(--white);border-radius:20px;padding:3rem 2rem;border:1px solid rgba(183,173,222,0.2);box-shadow:0 4px 20px rgba(58,48,89,0.05)}
+.success-wrap .icon{font-size:3.5rem;margin-bottom:1rem}
+.success-wrap h2{font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:0.6rem}
+.success-wrap p{font-size:0.92rem;color:var(--md);max-width:400px;margin:0 auto}
+footer{background:var(--navy);padding:2rem 1.5rem;text-align:center}
+footer p{font-size:0.82rem;color:rgba(255,255,255,0.4)}
+footer a{color:rgba(183,173,222,0.7);text-decoration:none}
+footer a:hover{color:var(--lav)}
+@media(max-width:580px){.fr{grid-template-columns:1fr}.form-wrap{padding:2rem 1rem 3rem}}
+</style>
+</head>
+<body>
+
+<div style="display:none" aria-hidden="true">
+  <form name="photo-release" netlify netlify-honeypot="bot-field">
+    <input name="bot-field">
+    <input name="fullName"><input name="dob"><input name="isAdult">
+    <input name="guardianName"><input name="guardianRel"><input name="guardianPhone">
+    <input name="releaseOption"><input name="limitedSocial"><input name="limitedWeb">
+    <input name="limitedFundraising"><input name="limitedPrint">
+    <textarea name="restrictions"></textarea>
+    <input name="signature"><input name="submittedAt">
+  </form>
+</div>
+
+<nav>
+  <a href="index.html" class="nb">
+    <div class="nbt">Uncommon Ground<span>Initiative</span></div>
+  </a>
+  <a href="forms.html" class="back-btn">← Back to Forms</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="label">Required — Form 2 of 2</div>
+    <h1>Photo &amp; Video Release Form</h1>
+    <p>Let us know how we can use photos and videos from events. You choose what you are comfortable with — we respect your decision completely.</p>
+  </div>
+</div>
+
+<div class="form-wrap">
+
+  <div id="mainForm">
+
+    <!-- WHO IS THIS FOR -->
+    <div class="section-card">
+      <div class="section-label">Section 1</div>
+      <h2>Individual Information</h2>
+      <div class="fg"><label>Full Name <span style="color:var(--red)">*</span></label><input type="text" id="fullName" placeholder="Teen's full name"></div>
+      <div class="fr">
+        <div class="fg"><label>Date of Birth</label><input type="date" id="relDob"></div>
+        <div class="fg"><label>Is this person 18 or older?</label>
+          <select id="isAdult" onchange="toggleGuardian()">
+            <option value="">Select</option>
+            <option value="no">No — under 18</option>
+            <option value="yes">Yes — 18 or older</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUARDIAN (shown if under 18) -->
+    <div class="section-card" id="guardianSection" style="display:none">
+      <div class="section-label">Section 2</div>
+      <h2>Parent / Guardian (if participant is under 18)</h2>
+      <div class="fg"><label>Parent / Guardian Name <span style="color:var(--red)">*</span></label><input type="text" id="guardianName" placeholder="Guardian's full name"></div>
+      <div class="fr">
+        <div class="fg"><label>Relationship</label><input type="text" id="guardianRel" placeholder="Parent, guardian..."></div>
+        <div class="fg"><label>Phone</label><input type="tel" id="guardianPhone" placeholder="(772) 000-0000"></div>
+      </div>
+    </div>
+
+    <!-- RELEASE OPTION -->
+    <div class="section-card">
+      <div class="section-label">Section 3</div>
+      <h2>Select Your Release Option <span style="color:var(--red)">*</span></h2>
+      <div class="info-box"><p>UGI will never sell your images or use them in a way that is inconsistent with our mission. All participants are portrayed with dignity and respect.</p></div>
+
+      <div class="option-card" id="optA" onclick="selectOpt('A')">
+        <div class="option-header">
+          <div class="option-dot"></div>
+          <span class="option-tag tag-teal">Full Release</span>
+          <h3>Option A</h3>
+        </div>
+        <p>I grant UGI the right to photograph, film, and use my image (or my minor child's) without compensation, for any and all purposes related to UGI's mission. This grant is non-exclusive, royalty-free, and may be used in perpetuity.</p>
+      </div>
+
+      <div class="option-card" id="optB" onclick="selectOpt('B')">
+        <div class="option-header">
+          <div class="option-dot"></div>
+          <span class="option-tag tag-navy">Limited Release</span>
+          <h3>Option B</h3>
+        </div>
+        <p>I give permission for my image to be used only for the specific platforms I select below.</p>
+        <div class="limited-checks" id="limitedChecks">
+          <label class="limit-item"><input type="checkbox" id="lSocial"> Social media (Instagram, TikTok, Facebook, YouTube)</label>
+          <label class="limit-item"><input type="checkbox" id="lWeb"> UGI website</label>
+          <label class="limit-item"><input type="checkbox" id="lFund"> Fundraising and donor communications</label>
+          <label class="limit-item"><input type="checkbox" id="lPrint"> Print flyers and event programs</label>
+        </div>
+      </div>
+
+      <div class="option-card" id="optC" onclick="selectOpt('C')">
+        <div class="option-header">
+          <div class="option-dot"></div>
+          <span class="option-tag tag-gray">No Release</span>
+          <h3>Option C</h3>
+        </div>
+        <p>I do not give permission for my image or likeness to be used by UGI in any form. I understand UGI staff will be notified and will make reasonable efforts to exclude me from photography.</p>
+      </div>
+    </div>
+
+    <!-- RESTRICTIONS -->
+    <div class="section-card">
+      <div class="section-label">Section 4</div>
+      <h2>Additional Restrictions</h2>
+      <p style="font-size:0.85rem;color:var(--md);margin-bottom:1rem">Any specific preferences or restrictions we should know about? (Optional)</p>
+      <div class="fg"><textarea id="restrictions" placeholder="Leave blank if none" style="min-height:80px;font-family:Inter,sans-serif;font-size:0.92rem;padding:0.7rem 1rem;border:1.5px solid rgba(183,173,222,0.35);border-radius:10px;outline:none;width:100%;resize:vertical;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(183,173,222,0.35)'"></textarea></div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="section-card">
+      <div class="section-label">Section 5</div>
+      <h2>Signature</h2>
+      <p style="font-size:0.85rem;color:var(--md);margin-bottom:1rem">Sign with your finger or mouse below. If signing on behalf of a minor, this is the parent or guardian's signature.</p>
+      <div class="sig-canvas-wrap" id="relSigWrap">
+        <canvas id="relSigCanvas"></canvas>
+        <div class="sig-hint" id="relSigHint">Sign here</div>
+      </div>
+      <div class="sig-actions"><button type="button" class="sig-clear" onclick="clearRelSig()">Clear</button></div>
+    </div>
+
+    <button class="submit-btn" id="relSubmitBtn" onclick="submitRelease()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>
+      Submit Release Form
+    </button>
+  </div>
+
+  <div class="success-wrap" id="relSuccessWrap">
+    <div class="icon">🎉</div>
+    <h2>All done.</h2>
+    <p>Both forms are now on file. Your teen is cleared for their first UGI event. We can't wait to meet them.</p>
+    <div style="margin-top:1.5rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="index.html#events" style="display:inline-block;padding:0.75rem 1.75rem;background:var(--navy);color:var(--white);border-radius:50px;font-family:Poppins,sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none">See Upcoming Events</a>
+      <a href="index.html" style="display:inline-block;padding:0.75rem 1.75rem;border:1.5px solid rgba(58,48,89,0.2);color:var(--navy);border-radius:50px;font-family:Poppins,sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none">Back to Home</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Uncommon Ground Initiative, Inc. &nbsp;|&nbsp; <a href="index.html">Back to Home</a> &nbsp;|&nbsp; (772) 877-5787</p>
+</footer>
+
+<script>
+let relPad;
+let selectedOpt = null;
+
+window.addEventListener('load', () => {
+  const c = document.getElementById('relSigCanvas');
+  c.width  = c.offsetWidth * (window.devicePixelRatio || 1);
+  c.height = 160 * (window.devicePixelRatio || 1);
+  c.style.height = '160px';
+  relPad = new SignaturePad(c, {penColor:'#3A3059', backgroundColor:'rgba(0,0,0,0)'});
+  relPad.addEventListener('beginStroke', () => {
+    document.getElementById('relSigHint').classList.add('hidden');
+    document.getElementById('relSigWrap').classList.add('signed');
+    document.getElementById('relSigWrap').classList.remove('sig-err');
+  });
+});
+window.addEventListener('resize', () => {
+  const c = document.getElementById('relSigCanvas');
+  c.width = c.offsetWidth * (window.devicePixelRatio || 1);
+  c.height = 160 * (window.devicePixelRatio || 1);
+  if (relPad) relPad.clear();
+  document.getElementById('relSigHint').classList.remove('hidden');
+  document.getElementById('relSigWrap').classList.remove('signed');
+});
+
+function clearRelSig() {
+  relPad && relPad.clear();
+  document.getElementById('relSigHint').classList.remove('hidden');
+  document.getElementById('relSigWrap').classList.remove('signed');
+}
+
+function toggleGuardian() {
+  const val = document.getElementById('isAdult').value;
+  document.getElementById('guardianSection').style.display = val === 'no' ? 'block' : 'none';
+}
+
+function selectOpt(opt) {
+  selectedOpt = opt;
+  ['A','B','C'].forEach(o => {
+    const el = document.getElementById('opt'+o);
+    el.classList.remove('selected','selected-navy','selected-gray');
+  });
+  const classes = {A:'selected', B:'selected-navy', C:'selected-gray'};
+  document.getElementById('opt'+opt).classList.add(classes[opt]);
+  document.getElementById('limitedChecks').classList.toggle('show', opt === 'B');
+}
+
+function encode(data) {
+  return Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k] || '')).join('&');
+}
+
+function submitRelease() {
+  const name = document.getElementById('fullName').value.trim();
+  if (!name) { document.getElementById('fullName').classList.add('err'); alert('Please enter the participant\'s full name.'); return; }
+  if (!selectedOpt) { alert('Please select a release option (A, B, or C).'); return; }
+  if (relPad.isEmpty()) {
+    document.getElementById('relSigWrap').classList.add('sig-err');
+    alert('Please provide your signature before submitting.');
+    document.getElementById('relSigCanvas').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+
+  const btn = document.getElementById('relSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const limitedSelected = selectedOpt === 'B' ? [
+    document.getElementById('lSocial').checked ? 'Social media' : '',
+    document.getElementById('lWeb').checked ? 'Website' : '',
+    document.getElementById('lFund').checked ? 'Fundraising' : '',
+    document.getElementById('lPrint').checked ? 'Print' : '',
+  ].filter(Boolean).join(', ') || 'None selected' : '';
+
+  const data = {
+    'form-name': 'photo-release',
+    fullName: name,
+    dob: document.getElementById('relDob').value,
+    isAdult: document.getElementById('isAdult').value,
+    guardianName: document.getElementById('guardianName')?.value.trim() || '',
+    guardianRel: document.getElementById('guardianRel')?.value.trim() || '',
+    guardianPhone: document.getElementById('guardianPhone')?.value.trim() || '',
+    releaseOption: `Option ${selectedOpt} — ${{A:'Full Release',B:'Limited Release',C:'No Release'}[selectedOpt]}`,
+    limitedPlatforms: limitedSelected,
+    restrictions: document.getElementById('restrictions').value.trim(),
+    signature: relPad.toDataURL(),
+    submittedAt: new Date().toLocaleString('en-US', {timeZone:'America/New_York'}),
+  };
+
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: encode(data)
+  }).then(() => {
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('relSuccessWrap').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }).catch(() => {
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('relSuccessWrap').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
